@@ -1,85 +1,165 @@
-# 🤖 GenAI iFood Case Study
-**Projeto de estudo em IA Generativa, Análise de Dados e Operações Logísticas.**
+// ============================================================================
+// 🤖 GenAI iFood Case Study – Projeto de Estudos
+// Sistema Inteligente para Análise de Reclamações, Insights Operacionais
+// e Classificação Automática utilizando IA Generativa.
+// ============================================================================
 
-Este é um **projeto pessoal de estudos**, inspirado em situações reais observadas em atendimentos de CX/PX em plataformas como **iFood**, **Shopee** e **Reclame Aqui**.  
-Todos os dados utilizados são **simulados**, criados apenas para fins educacionais.
+// ---------------------------------------------------------------------------
+// 📌 DESCRIÇÃO
+// ---------------------------------------------------------------------------
+// Este é um projeto pessoal de estudos inspirado em situações reais vividas 
+// no atendimento ao cliente em plataformas como iFood, Shopee e Reclame Aqui.
+// Todos os dados são 100% simulados, criados apenas para fins educacionais.
+// ---------------------------------------------------------------------------
 
----
 
-## 🎯 Objetivo do Projeto
+// ============================================================================
+// 🎯 OBJETIVO DO PROJETO
+// ============================================================================
+/*
+O propósito deste estudo é desenvolver um sistema capaz de:
 
-Criar um sistema que utiliza **IA Generativa (LLMs)** para:
+✔ Ler reclamações de clientes (dados simulados)
+✔ Classificar automaticamente cada reclamação
+✔ Identificar padrões e recorrências
+✔ Detectar falhas logísticas e comportamentais
+✔ Criar resumos executivos automáticos (GenAI)
+✔ Gerar insights operacionais e estratégicos
+✔ Sugerir melhorias para operação e experiência do usuário
+*/
 
-- Ler reclamações de clientes (dados simulados)
-- Classificar automaticamente cada reclamação
-- Detectar padrões recorrentes
-- Gerar insights operacionais
-- Criar resumos executivos automáticos
-- Sugerir melhorias logísticas e de experiência do usuário  
-  *(GenAI aplicada à operação de plataformas de delivery)*
 
----
+// ============================================================================
+// 🧠 PRINCIPAIS PROBLEMAS ANALISADOS (Simulados)
+// ============================================================================
 
-## 🧠 Principais Problemas Analisados (dados simulados)
-Baseados em cenários comuns vivenciados em operações reais:
+/*
+1. ❌ Pedido cancelado por “cliente não localizado”
+   - Entregador não realizou ligação
+   - Apenas enviou mensagem e cancelou
+   - Cliente fica sem pedido e sem reembolso
 
-1. **Pedido cancelado por "cliente não localizado"**  
-   - Mesmo quando o entregador não ligou ou só mandou mensagem.
+2. 📦 Pedido marcado como entregue, mas não entregue
+   - Uso indevido dos 4 últimos dígitos para confirmar entrega
+   - Registro mostra entrega, mas o cliente não recebeu o item
 
-2. **Pedido marcado como entregue, mas não entregue de fato**  
-   - Casos de confirmação indevida com os 4 últimos dígitos.
+3. 🍔 Má qualidade dos produtos
+   - Bebidas vazando
+   - Embalagens abertas
+   - Alimentos frios ou mal acondicionados
 
-3. **Produtos com má qualidade ou armazenamento inadequado**  
-   - Ex.: bebidas vazando, alimentos frios ou embalagens incorretas.
+4. 🚨 Falhas logísticas
+   - TME alto
+   - Poucas tentativas de contato
+   - Problemas de rota
+   - Atrasos e retrabalho logístico
+*/
 
-4. **Retrabalhos logísticos e falhas no fluxo de entrega**  
-   - TME alto, poucas tentativas de contato, atrasos.
 
----
+// ============================================================================
+// 🛠️ TECNOLOGIAS UTILIZADAS
+// ==============================================
+/*
+Linguagens:
+- Python
+- SQL (para análises complementares)
 
-## 🛠️ Tecnologias Utilizadas
+IA & GenAI:
+- LLMs (Modelos de Linguagem)
+- Prompt Engineering
+- Classificação automática e geração de insights
 
-### **Linguagens**
-- Python  
-- SQL (futuras análises complementares)
+Bibliotecas Python:
+- pandas
+- numpy
+- matplotlib
+- openai / llama-cpp / outro provider
 
-### **IA & GenAI**
-- LLMs  
-- Prompt Engineering  
-- Geração automatizada de insights  
+Ferramentas:
+- Git & GitHub
+- VS Code
+- (Futuro) Tableau ou Power BI
+- (Futuro) Databricks para ETL
+*/
 
-### **Bibliotecas (Python)**
-- pandas  
-- numpy  
-- matplotlib  
-- openai ou llama-cpp (dependendo do modelo que será usado)
 
-### **Ferramentas**
-- Git & GitHub  
-- VS Code  
-- (Futuro) Tableau ou Power BI para visualização
 
----
+// ============================================================================
+// 📁 ESTRUTURA DO PROJETO
+// ============================================================================
 
-## 📁 Estrutura do Projeto
-
-```text
+/*
 genai-ifood-case-study/
 │
 ├── data/
-│   ├── raw/                       # Reclamações simuladas
-│   └── processed/                 # Dados após classificação/ETL
+│   ├── raw/                       // Reclamações simuladas
+│   └── processed/                 // Dados limpos e processados
 │
 ├── notebooks/
-│   └── exploracao_inicial.ipynb   # EDA, gráficos, análise preliminar
+│   └── exploracao_inicial.ipynb   // EDA, gráficos e análises preliminares
 │
 ├── src/
-│   ├── classifier.py              # Classificação usando LLM
-│   ├── generator.py               # Resumos e insights
-│   └── pipeline.py                # Pipeline completo (ETL + IA)
+│   ├── classifier.py              // Classificação com LLM
+│   ├── generator.py               // Geração de resumos e insights
+│   └── pipeline.py                // Pipeline completo (ETL + IA)
 │
 ├── outputs/
-│   ├── classificacoes.csv
-│   └── relatorio_insights.txt
+│   ├── classificacoes.csv         // Resultado da classificação
+│   └── relatorio_insights.txt     // Insights gerados automaticamente
 │
 └── README.md
+*/
+
+
+
+// ============================================================================
+// 📊 METODOLOGIA DO PROJETO
+// ============================================================================
+/*
+1. Coleta de Dados (simulados)
+   - Reclamações criadas com cenários reais
+
+2. Limpeza & Transformação (ETL)
+   - Padronização de texto
+   - Identificação de campos relevantes
+
+3. Classificação via LLM
+   - Modelo identifica tipo, gravidade, setor e causa raiz
+
+4. Geração de Insights GenAI
+   - Resumo executivo
+   - Rankings
+   - Padrões de comportamento e logística
+
+5. Visualização & Relatórios
+   - Gráficos e análises em notebooks
+*/
+
+
+
+// ============================================================================
+// 🔮 PRÓXIMOS PASSOS
+// ============================================================================
+/*
+✔ Criar dataset simulado em data/raw/
+✔ Criar EDA em notebooks
+✔ Criar pipeline em src/pipeline.py
+✔ Gerar relatórios automáticos em outputs
+✔ Criar dashboards (Tableau/Power BI)
+*/
+
+
+
+// ============================================================================
+// 📌 NOTA IMPORTANTE
+// ============================================================================
+/*
+Este projeto é totalmente educacional, usado para desenvolver habilidades em:
+
+- IA Generativa aplicada à operação
+- Análise de dados
+- Python e pipelines de dados
+- Storytelling analítico
+- Boas práticas de organização em projetos
+*/
+// ============================================================================
