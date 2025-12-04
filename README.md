@@ -1,139 +1,182 @@
-# 🤖 GenAI iFood Case Study  
-Projeto de estudo em IA Generativa, Análise de Dados e Operações Logísticas.
+🚀 GenAI iFood Case Study
+Análise Operacional + IA Generativa + UX + Atendimento — Dados 100% simulados
 
-Este é um projeto **100% educacional**, inspirado em situações reais de atendimento em plataformas como **iFood, Shopee e Reclame Aqui**.  
-Todos os dados utilizados são **simulados** e servem apenas para prática de Análise de Dados, GenAI e ETL.
+Este é um projeto técnico-analítico inspirado em problemas reais enfrentados por clientes e operadores de plataformas de delivery como iFood, Shopee e Reclame Aqui.
+Todos os dados são simulados, criados exclusivamente para estudo e prática profissional.
 
----
+🎯 Objetivos do Projeto
 
-## 🎯 Objetivo do Projeto  
-Construir um sistema inteligente capaz de:
+Construir um sistema integrado capaz de:
 
-- Ler reclamações de clientes (dados simulados)  
-- Classificar automaticamente categorias e causas  
-- Identificar padrões e recorrências operacionais  
-- Detectar falhas logísticas e comportamentais  
-- Gerar resumos executivos com IA Generativa  
-- Criar insights estratégicos para operações de delivery  
-- Sugerir melhorias em UX, logística e atendimento  
+📥 Ler reclamações textuais (dados simulados)
 
----
+🧠 Classificar automaticamente categorias e causas via LLM
 
-## 🧠 Problemas Analisados (dados simulados)
+📊 Identificar padrões logísticos e operacionais
 
-Baseados em situações comuns do dia a dia de plataformas de entrega:
+🚨 Detectar falhas de entrega e atendimento
 
-### 1. ❌ *Pedido cancelado por “cliente não localizado”*  
-- Entregador não liga  
-- Apenas manda mensagem  
-- Cliente fica sem pedido e sem reembolso  
+📝 Gerar resumos executivos com IA Generativa
 
-### 2. 📦 *Pedido marcado como entregue, porém não entregue*  
-- Uso indevido dos últimos 4 dígitos para confirmação  
-- Registro mostra “entregue”, mas o cliente não recebeu  
+💡 Criar insights estratégicos para CX, PX, logística e marketplace
 
-### 3. 🍟 *Má qualidade dos produtos*  
-- Bebidas vazando  
-- Batatas enviadas em embalagem aberta  
-- Produtos frios ou mal montados  
+🔧 Estruturar pipeline ETL para análise contínua
 
-### 4. 🚨 *Falhas logísticas*  
-- TME alto  
-- Baixa tentativa de contato  
-- Atrasos  
-- Problemas na rota e no processo operacional  
+📈 Produzir gráficos, indicadores e relatórios automáticos
 
----
+🧠 Cenários Analisados (dados simulados)
 
-## 🛠️ Tecnologias Utilizadas
+Baseados nos tipos de reclamações mais comuns no iFood e relatados por atendentes:
 
-### **Linguagens**
-- Python  
-- SQL (em análises futuras)
+1️⃣ ❌ Pedido cancelado por “cliente não localizado”
 
-### **IA & GenAI**
-- LLMs  
-- Prompt Engineering  
-- Geração de insights e classificações automáticas  
+Entregador não liga
 
-### **Bibliotecas Python**
-- pandas  
-- numpy  
-- matplotlib  
-- openai ou llama-cpp-python (dependendo do modelo)  
+Apenas envia mensagem
 
-### **Ferramentas**
-- VS Code  
-- Git & GitHub  
-- (Futuro) Tableau / Power BI  
+Cliente fica sem pedido e sem reembolso
 
----
+2️⃣ 📦 Pedido marcado como entregue, mas não entregue
 
-## 📁 Estrutura do Projeto
+Uso indevido dos últimos 4 dígitos para confirmação
+
+Registro mostra “entregue”, mas o cliente não recebeu
+
+3️⃣ 🍟 Má qualidade dos produtos
+
+Bebidas vazando
+
+Batata enviada em embalagem aberta
+
+Produto chega frio ou mal montado
+
+4️⃣ 🚨 Falhas logísticas recorrentes
+
+TME alto
+
+Rotas ineficientes
+
+Baixa tentativa de contato
+
+Atrasos críticos
+
+🛠️ Tecnologias Utilizadas
+Linguagens
+
+Python
+
+SQL (em etapas futuras)
+
+Bibliotecas Python
+
+pandas
+
+numpy
+
+matplotlib
+
+reportlab (PDF automático)
+
+openai / llama-cpp-python (para LLMs)
+
+Ferramentas
+
+VS Code
+
+Jupyter Notebook
+
+Git & GitHub
+
+(Futuro) Tableau ou Power BI
+
+📁 Estrutura do Projeto
 genai-ifood-case-study/
 │
 ├── data/
-│ ├── raw/ # Reclamações brutas (simuladas)
-│ └── processed/ # Dados tratados e prontos para análise
+│   ├── raw/           # Dados brutos simulados
+│   └── processed/     # Dados tratados
 │
 ├── notebooks/
-│ └── exploracao_inicial.ipynb # EDA, gráficos e descobertas iniciais
+│   └── exploracao_inicial.ipynb   # EDA + gráficos
 │
 ├── src/
-│ ├── classifier.py # Classificação com LLM
-│ ├── generator.py # Geração de resumos e insights
-│ └── pipeline.py # Pipeline geral (ETL + IA)
+│   ├── classifier.py  # Classificação com LLM
+│   ├── generator.py   # Geração de resumos e insights
+│   └── pipeline.py    # ETL + IA
 │
 ├── outputs/
-│ ├── classificacoes.csv # Resultado das classificações
-│ └── relatorio_insights.txt # Insights gerados automaticamente
+│   ├── classificacoes.csv
+│   ├── graficos/                  # PNGs gerados no notebook
+│   └── relatorio_reclamacoes_ifood.pdf  # Relatório final
 │
 └── README.md
 
+📊 Metodologia e Fluxo Analítico
+1. Criação e simulação das reclamações
 
----
+Estrutura textual baseada em casos reais
 
-## 📊 Metodologia do Projeto
+Variáveis categóricas e numéricas incluídas
 
-### **1. Coleta e Simulação de Reclamações**
-Criação de cenários semelhantes aos reais.
+2. ETL e limpeza
 
-### **2. Limpeza & Transformação (ETL)**
-- Padronização de textos  
-- Organização de variáveis  
-- Extração de entidades  
+Padronização de texto
 
-### **3. Classificação via LLM**
-- Identificação automática de categorias  
-- Causa raiz  
-- Gravidade  
+Correção de inconsistências
 
-### **4. Geração de Insights GenAI**
-- Resumos executivos  
-- Padrões recorrentes  
-- Melhores práticas sugeridas  
+Preparação para classificação
 
-### **5. Visualização**
-- Gráficos exploratórios  
-- Indicadores operacionais  
+3. Classificação com IA
 
----
+Identificação da categoria
 
-## 🔮 Próximos Passos
+Causa raiz
 
-- Criar dataset simulado em **data/raw**  
-- Criar EDA em **notebooks/**  
-- Criar pipeline completo em **src/**  
-- Gerar insights automáticos  
-- Construir dashboards no Tableau ou Power BI  
+Severidade da falha
 
----
+4. Geração de insights executivos
 
-## 📌 Nota Importante  
-Este projeto **não utiliza dados reais**.  
-Tudo é criado unicamente para fins de estudo e demonstração técnica.
+Resumo automático
 
----
+Padrões de comportamento
 
+Sugestões de melhoria
 
+5. Visualização
 
+Gráficos de categorias
+
+Indicadores operacionais
+
+Problemas mais frequentes
+
+6. Relatório PDF automático
+
+Gerado direto via Python, contendo:
+
+Texto
+
+Tabelas
+
+Gráficos
+
+Insights da IA
+
+Métricas principais
+
+🔮 Próximos Passos do Projeto
+
+🚀 Criar pipeline final com automação completa
+
+📈 Dashboard no Tableau / Power BI
+
+🤖 Adicionar classificação avançada (zero-shot)
+
+🔍 Criar modelo preditivo para risco de falha na entrega
+
+🏗️ Estruturar arquitetura de dados (Bronze → Silver → Gold)
+
+📌 Aviso Importante
+
+Este projeto não utiliza dados reais do iFood ou de qualquer empresa.
+Todo conteúdo é simulado, criado estritamente para estudo, prática e demonstração de habilidades técnicas.
